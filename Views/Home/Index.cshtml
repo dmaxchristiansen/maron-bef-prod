@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Login & Registration";
+}
+
+@model IndexViewModel
+
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-5">
+            <div class="text-center">
+                <h3 class="text-light">Register an Account</h3>
+                <h6 class="text-light">and find endless love...</h6>
+            </div>
+            <form asp-action="Register" asp-controller="Home" method="post">
+            <div class="form-group">
+                <h5 class="text-light mb-0"><label asp-for="NewUser.FirstName"></label></h5>
+                <span class="text-danger" asp-validation-for="NewUser.FirstName"></span>
+                <input asp-for="NewUser.FirstName" class="form-control">
+            </div>
+            <div class="form-group">
+                <h5 class="text-light mb-0"><label asp-for="NewUser.LastName"></label></h5>
+                <span class="text-danger" asp-validation-for="NewUser.LastName"></span>
+                <input asp-for="NewUser.LastName" class="form-control">
+            </div>
+            <div class="form-group">
+                <h5 class="text-light mb-0"><label asp-for="NewUser.Email"></label></h5>
+                <span class="text-danger" asp-validation-for="NewUser.Email"></span>
+                <input asp-for="NewUser.Email" class="form-control">
+            </div>
+            <div class="form-group">
+                <h5 class="text-light mb-0"><label asp-for="NewUser.Password"></label></h5>
+                <span class="text-danger" asp-validation-for="NewUser.Password"></span>
+                <input asp-for="NewUser.Password" class="form-control">
+            </div>
+            <div class="form-group">
+                <h5 class="text-light mb-0"><label asp-for="NewUser.Confirm"></label></h5>
+                <span class="text-danger" asp-validation-for="NewUser.Confirm"></span>
+                <input asp-for="NewUser.Confirm" class="form-control">
+            </div>
+            <input type="submit" value="Register" class="btn btn-success">
+            </form>
+        </div>
+        <div class="col-5">
+            <div class="text-center">
+                <img src="https://us.123rf.com/450wm/krisdog/krisdog1709/krisdog170900155/85932297-stock-vector-bride-and-groom-wedding-concept-silhouette.jpg?ver=6" width="250" class="rounded mb-3" alt="">
+                <h3 class="text-light">Already Have an Account?</h3>
+            </div>
+            <form asp-action="Login" asp-controller="Home" method="post">
+            <div class="form-group">
+                <h5 class="text-light mb-0"><label asp-for="CurrentUser.Email"></label></h5>
+                <span class="text-danger" asp-validation-for="CurrentUser.Email"></span>
+                <input asp-for="CurrentUser.Email" class="form-control">
+            </div>
+            <div class="form-group">
+                <h5 class="text-light mb-0"><label asp-for="CurrentUser.Password"></label></h5>
+                <span class="text-danger" asp-validation-for="CurrentUser.Password"></span>
+                <input asp-for="CurrentUser.Password" class="form-control">
+            </div>
+            <input type="submit" value="Login" class="btn btn-success">
+            </form>
+        </div>
+    </div>
+</div>

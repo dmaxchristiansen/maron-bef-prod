@@ -1,0 +1,19 @@
+@model Wedding
+
+<div class="row align-items-center">
+    <div class="col">
+        <h1 class="text-light">@Model.WedderOne & @Model.WedderTwo's Wedding</h1>
+    </div>
+    <div class="d-flex col justify-content-end">
+        <a asp-action="Dashboard" asp-controller="Wedding" class="mr-2 d-inline-block btn btn-primary">Dashboard</a> 
+        <a asp-action="Logout" asp-controller="Home" class="d-inline-block btn btn-danger">Log Out</a>
+    </div>
+</div>    
+<h4 class="mt-4 text-light">Date: @Model.Date.ToString("MMMM d, yyy")</h4>
+<h4 class="mt-4 text-light">Guests:</h4>
+<ul>
+    @foreach (var response in @Model.Responses)
+    {
+        <li class="mt-1 text-light">@response.Guest.FirstName @response.Guest.LastName</li>
+    }
+</ul>
